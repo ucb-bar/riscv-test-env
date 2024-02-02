@@ -21,10 +21,12 @@ _start:
   /* NMI vector */
   .align 2
 nmi_vector:
+  csrr sp, mscratch
   j wtf
 
   .align 2
 trap_vector:
+  csrr sp, mscratch
   j wtf
 
 handle_reset:
